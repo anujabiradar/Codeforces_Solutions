@@ -1,0 +1,23 @@
+//💡 Approach --->
+//Read the watermelon weight and store it in w.
+//Check whether w is even using the modulo operator:
+//w % 2 == 0
+//Also, w must be greater than 2, because both parts must have positive even weights.
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int w = sc.nextInt();
+
+        if (w > 2 && w % 2 == 0) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+
+        sc.close();
+    }
+}
