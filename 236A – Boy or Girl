@@ -1,0 +1,37 @@
+💡 Approach-->
+Read the username as a string.
+Create a boolean array of size 26 to keep track of the characters we have already seen.
+Traverse each character of the username.
+If the character has not appeared before, mark it as visited and increase the distinct character count.
+After counting all distinct characters, check whether the count is even or odd.
+count % 2 == 0 → CHAT WITH HER!
+count % 2 != 0 → IGNORE HIM!
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.next();
+
+        boolean[] seen = new boolean[26];
+        int count = 0;
+
+        for (char ch : str.toCharArray()) {
+            if (!seen[ch - 'a']) {
+                seen[ch - 'a'] = true;
+                count++;
+            }
+        }
+
+        if (count % 2 == 0) {
+            System.out.println("CHAT WITH HER!");
+        } else {
+            System.out.println("IGNORE HIM!");
+        }
+
+        sc.close();
+    }
+}
