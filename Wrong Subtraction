@@ -1,0 +1,31 @@
+🔹 Approach:
+
+Read n and k.
+Repeat the operation k times.
+Check the last digit using n % 10.
+If the last digit is 0, divide n by 10.
+Otherwise, decrement n by 1.
+Print the final value.
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+
+        for (int i = 0; i < k; i++) {
+
+            if (n % 10 == 0) {
+                n = n / 10;
+            } else {
+                n--;
+            }
+        }
+
+        System.out.println(n);
+    }
+}
