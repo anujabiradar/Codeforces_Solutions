@@ -1,0 +1,45 @@
+💡 Approach
+
+The important point is that m must be the smallest prime number greater than n.
+
+Start checking numbers from n + 1.
+For each number, check whether it is prime.
+The first prime number we find is the next prime after n.
+Compare this number with m.
+If they are equal, print YES; otherwise, print NO.
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+
+        int nextPrime = n + 1;
+
+        while (true) {
+            boolean prime = true;
+
+            for (int i = 2; i < nextPrime; i++) {
+                if (nextPrime % i == 0) {
+                    prime = false;
+                    break;
+                }
+            }
+
+            if (prime) {
+                break;
+            }
+
+            nextPrime++;
+        }
+
+        if (nextPrime == m) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+}
